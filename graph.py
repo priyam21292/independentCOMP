@@ -23,8 +23,8 @@ def random_graph(n,p,seed=None):
 	random.seed(seed)
 	g = Graph()
 	for i in range(n):
-		for j in range(i,n):
-			if random.random() < p:
+		for j in range(i+1,n):
+			if random.random() < p and i!=j:
 				g.add(i,j)
 	return g
 
